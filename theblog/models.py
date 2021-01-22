@@ -20,16 +20,6 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('home')
 
-class new(models.Model):
-    title = models.CharField(max_length=255)
-    description = models.CharField(max_length=500)
-    author = models.CharField(max_length=255)
-    url = models.CharField(max_length=500)
-
-    title_list = news_extractor.title_list
-    author_list = news_extractor.author_list
-    description_list = news_extractor.description_list
-    url_list = news_extractor.url_list
 
     
 
