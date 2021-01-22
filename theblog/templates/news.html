@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+
+{% block title %}
+News Details
+{% endblock %}
+
+
+{% block content%}
+
+<h1>News</h1>
+<br/>
+<ul type="none">
+{% for news in object_list %}
+    <li> <a href="{{news.url}}" target="_blank">{{ news.title }}</a> <br/> <small> By: &nbsp;{{ news.author }}</small> &nbsp; 
+        <br/><br/>
+        {{ news.description }}&nbsp;&nbsp;<small></small><a href="{{news.url}}" target="_blank">Read More</a></small>         
+    </li>
+    <hr/>
+{% endfor %}
+</ul>
+
+
+
+{% endblock %}
+

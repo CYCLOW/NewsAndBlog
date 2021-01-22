@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+
+{% block title %}
+Create a New Blog Post
+{% endblock %}
+
+
+
+{% block content%}
+
+<h1>Add Post....</h1>
+<br/>
+<div class="form-group">
+<form method="post" >
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-secondary">Post</button>
+
+</form>
+</div>
+
+
+<script>
+    var name = "{{user.id}}";
+    document.getElementById('elder').value = name;
+</script>
+
+
+{% endblock %}
+
+
