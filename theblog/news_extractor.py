@@ -1,8 +1,6 @@
 import json
 import requests
 
-from .models import New
-
 title_list = []
 author_list = []
 description_list = []
@@ -30,14 +28,6 @@ for news in news_json['articles']:
         url_list.append(url)
         count -= 1
 
-
-
-for i in range(0,len(title_list)):
-    if New.title == title_list[i]:
-        pass
-    else:
-        value = New(title=title_list[i], author=author_list[i], description=description_list[i], url=url_list[i])
-        value.save()
         
 
 

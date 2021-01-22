@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime,date
+from . import news_extractor
 
 
 # Create your models here.
@@ -19,17 +20,17 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('home')
 
-class New(models.Model):
+class new(models.Model):
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=500)
     author = models.CharField(max_length=255)
     url = models.CharField(max_length=500)
 
-    def __init__(self, *args, **kwargs):
-        super(New, self).__init__(*args, **kwargs)
+    title_list = news_extractor.title_list
+    author_list = news_extractor.author_list
+    description_list = news_extractor.description_list
+    url_list = news_extractor.url_list
 
-    def __str__(self):
-        return self.title + "  |  " + str(self.author)
     
 
 
