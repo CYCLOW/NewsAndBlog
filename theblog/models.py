@@ -19,11 +19,17 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('home')
 
-class News(models.Model):
+class New(models.Model):
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=500)
     author = models.CharField(max_length=255)
     url = models.CharField(max_length=500)
+
+    def __init__(self):
+        return super(New, self)
+
+    def __str__(self):
+        return self.title + "  |  " + str(self.author)
     
 
 

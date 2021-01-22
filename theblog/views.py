@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post, News
+from .models import Post, New
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy
 from . import news_extractor
@@ -16,18 +16,8 @@ class HomeView(ListView):
     ordering = ['-post_date']
 
 class NewsView(ListView):
-    model = News
+    model = New
     template_name = 'news.html'
-    title_list = news_extractor.title_list
-    author_list = news_extractor.author_list
-    description_list = news_extractor.description_list
-    url_list = news_extractor.url_list
-    for i in range(0,len(news_extractor.title_list)):
-        if News.objects.filter(title=title_list[i]).exists():
-            pass
-        else:
-            value = News(title=title_list[i], author=author_list[i], description=description_list[i], url=url_list[i])
-            value.save()
             
 
 class ArticleDetailView(DetailView):
