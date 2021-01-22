@@ -4,13 +4,13 @@ from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
 from .views import HomeView ,ArticleDetailView, AddPostView, UpdatePostView, DeletePostView, NewsView
-from .models import News
+from .models import New
 
 urlpatterns = [ 
 
     #path('', views.home, name='home'),
     
-    path('',NewsView.as_view(), name='home'),
+    path('',NewsView.as_view(), name='news'),
     
     path('blog', HomeView.as_view(), name='blogs'),
     

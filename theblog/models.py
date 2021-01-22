@@ -24,7 +24,10 @@ class New(models.Model):
     description = models.CharField(max_length=500)
     author = models.CharField(max_length=255)
     url = models.CharField(max_length=500)
-    
+
+    def __init__(self, *args, **kwargs):
+        super(New, self).__init__(*args, **kwargs)
+
     def __str__(self):
         return self.title + "  |  " + str(self.author)
     
