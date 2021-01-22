@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post, new
+from .models import Post
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy
 from . import news_extractor
@@ -14,10 +14,6 @@ class HomeView(ListView):
     model = Post
     template_name = 'home.html'
     ordering = ['-post_date']
-
-class NewsView(ListView):
-    model = new
-    template_name = 'news.html'
             
 
 class ArticleDetailView(DetailView):
