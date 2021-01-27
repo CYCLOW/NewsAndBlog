@@ -20,7 +20,7 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('home_blogs')
 
-class New(models.Model):
+class new(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
     description = models.TextField(max_length=300)

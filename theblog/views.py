@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post,New
+from .models import Post,new
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy
 import json
@@ -34,10 +34,10 @@ for news in news_json['articles']:
         count -= 1
 
 for i in range(0,len(title_list)):
-    if New.title == title_list[i]:
+    if new.title == title_list[i]:
         pass
     else:
-        value = New(title=title_list[i], author=author_list[i], description=description_list[i], urls=url_list[i])
+        value = new(title=title_list[i], author=author_list[i], description=description_list[i], urls=url_list[i])
         value.save()
 # Create your views here.
 
@@ -45,7 +45,7 @@ for i in range(0,len(title_list)):
 #   return render(request,'home.html', {})
 
 class NewsView(ListView):
-    model = New
+    model = new
     template_name = 'news.html'
 
 class HomeView(ListView):
