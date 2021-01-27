@@ -8,7 +8,7 @@ from .views import HomeView ,ArticleDetailView, AddPostView, UpdatePostView, Del
 urlpatterns = [ 
 
     #path('', views.home, name='home'),
-    path('', NewsView.as_view(), name='home_news'),
+    path('', NewsView.as_view(), name='home'),
     path('blogs/', HomeView.as_view(), name='home_blogs'),
     path('article/<int:pk>', ArticleDetailView.as_view(), name='article-detail'),
     path('add_post/', AddPostView.as_view(), name='add_post'),

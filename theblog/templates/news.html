@@ -12,9 +12,9 @@ News Details
 <br/>
 <ul type="none">
 {% for news in object_list %}
-    <li> <a href="{{news.url}}" target="_blank">{{ news.title }}</a> <br/> <small> By: &nbsp;{{ news.author }}</small> &nbsp; 
+    <li> <a href="{{news.urls}}" target="_blank">{{ news.title }}</a> <br/> <small> By: &nbsp;{{ news.author }}</small> &nbsp; 
         <br/><br/>
-        {{ news.description }}&nbsp;&nbsp;<small></small><a href="{{news.url}}" target="_blank">Read More</a></small>         
+        {{ news.description }}&nbsp;&nbsp;<small></small><a href="{{news.urls}}" target="_blank">Read More</a></small>         
     </li>
     <hr/>
 {% endfor %}

@@ -18,9 +18,9 @@ class Post(models.Model):
         return self.title + "  |  " + str(self.author)
     
     def get_absolute_url(self):
-        return reverse('home')
+        return reverse('home_blogs')
 
-class News(models.Model):
+class New(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
     description = models.TextField(max_length=300)
@@ -28,6 +28,9 @@ class News(models.Model):
 
     def __str__(self):
         return self.title + "  |  " + str(self.author)
+
+    def get_absolute_url(self):
+        return reverse('home_news')
 
     
 
