@@ -13,11 +13,12 @@ from . import news_extractor
 class NewsView(ListView):
     model = Post
     template_name = 'news.html'
-    for i in range(len(news_extractor.title_list)):
-        if news_extractor.title_list(i) == News.title:
-            pass
-        else:
-            News.objects.create(title = news_extractor.title_list[i], author = news_extractor.author_list[i], description = news_extractor.description_list[i], urls = news_extractor.url_list[i] )
+    # for i in range(len(title_list)):
+    #     if title_list(i) == News.title(i):
+    #         pass
+    #     else:
+    #         News.objects.create(title = news_extractor.title_list[i], author = news_extractor.author_list[i], description = news_extractor.description_list[i], urls = news_extractor.url_list[i] )
+    #         News.save()
 
 class HomeView(ListView):
     model = Post
